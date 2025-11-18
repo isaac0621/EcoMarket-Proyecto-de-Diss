@@ -12,63 +12,92 @@
 </head>
 <body>
 <!-- Barra de navegación: logo, menú y el carrito para no perder las compras -->
+ <!--Aquí va el logo, el menú y el botón del carrito para ver lo que se ha agregado. -->
+
 <nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm">
     <div class="container">
+            <!-- Logo y nombre del negocio -->
       <a class="navbar-brand d-flex align-items-center gap-2" href="#">
         <img src="IMG/icon-hamburguesa.png" alt="Eco" width="36">
+            <!-- Título y subtítulo del logo -->
         <div>
           <div style="font-weight:700">EcoMarket</div>
           <small style="font-size:.7rem;color:var(--muted)">orgánico • local • justo</small>
         </div>
       </a>
+      <!-- Botón que aparece en pantallas pequeñas para abrir el menú -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <!-- Menú principal de navegación -->
       <div class="collapse navbar-collapse" id="menuNav">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <!-- Enlaces a las secciones de la página -->
           <li class="nav-item"><a class="nav-link active" href="#home">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
           <li class="nav-item"><a class="nav-link" href="#ofertas">Ofertas</a></li>
           <li class="nav-item"><a class="nav-link" href="#contacto">Contáctanos</a></li>
-          <li class="nav-item ms-3"><button class="btn btn-outline-success" id="ver-carrito">Carrito (<span id="cart-count">0</span>)</button></li>
+          <!-- Botón para ver el carrito. Muestra cuántos productos hay dentro. -->
+          <li class="nav-item ms-3">
+            <button class="btn btn-outline-success" id="ver-carrito">Carrito (<span id="cart-count">0</span>)
+            </button>
+          </li>
         </ul>
       </div>
     </div>
   </nav>  
+  <!-- Contenedor principal del contenido de la página -->
   <main class="container my-4">
 
+<!--------------------------------------------------->
+
 <!-- Presentación del sitio: slogan, botón de acción y ventajas del mercado eco -->
+<!-- Aquí se muestra el slogan, un texto rápido y botones para que la persona empiece a usar la página. -->
 <section id="home" class="hero p-4 mb-4">
       <div class="row align-items-center">
+        <!-- Columna izquierda: texto, slogan y botones -->
         <div class="col-md-7">
+          <!-- Etiqueta pequeña que resalta que todo es orgánico -->
           <span class="badge-eco">100% Productos Orgánicos</span>
+          <!-- Frase principal de presentación -->
           <h1 class="mt-3">Comida real. Gente real. Amor por la tierra.</h1>
+          <!-- Descripción breve para que el visitante entienda de qué va la tienda -->
           <p class="lead text-muted">Compra frutas, verduras, granos y más — directo de productores locales. Diseño claro, búsqueda rápida y proceso de compra sin fricciones.</p>
+          <!-- Botones principales: uno para ir a los productos y otro para ver cómo funciona la página -->
           <div class="d-flex gap-2">
             <a href="#productos" class="btn btn-success btn-lg">Explorar productos</a>
             <button class="btn btn-outline-secondary" id="how-it-works">¿Cómo funciona?</button>
           </div>
+          <!-- Lista de ventajas o características de la página -->
           <ul class="mt-3" style="color:var(--muted)">
             <li>Responsivo: móvil, tablet y escritorio.</li>
             <li>Formulario simple para contacto y pedidos especiales.</li>
             <li>Filtros inteligentes y carrito rápido.</li>
           </ul>
         </div>
+        <!-- Columna derecha: imagen de presentación (solo aparece en pantallas medianas o grandes) -->
         <div class="col-md-5 text-center d-none d-md-block">
           <img src="IMG/Comida-Presentación.jpg" alt="frutas" class="img-fluid rounded" style="max-height:320px; object-fit:cover">
         </div>
       </div>
     </section>
 
+<!--------------------------------------------------->
+
 <!-- Barra de búsqueda y filtros: encuentra rápido lo que quieres -->
+<!--Esto permite encontrar productos rápido según lo que la persona necesite. -->
 <section class="mb-4">
   <div class="row g-2 align-items-center">
+    <!-- Campo de búsqueda: la persona escribe el nombre del producto -->
     <div class="col-md-6">
       <div class="input-group">
+        <!-- Icono decorativo -->
         <span class="input-group-text">🔎</span>
+        <!-- Caja donde se escribe lo que se quiere buscar -->
         <input id="search" class="form-control" placeholder="Buscar producto (ej: tomate, quinoa)">
       </div>
     </div>
+    <!-- Botones para filtrar por categoría de producto -->
     <div class="col-md-6 text-md-end">
       <div class="btn-group" role="group">
         <button class="btn btn-outline-secondary" data-filter="all">Todos</button>
@@ -80,146 +109,246 @@
   </div>
 </section>
 
+<!--------------------------------------------------->
+
 <!-- Productos -->
+<!-- Sección donde se muestran los productos disponibles -->
 <section id="productos" class="mb-5">
+    <!-- Título de la sección -->
   <h3 class="mb-3">Productos destacados</h3>
+    <!-- Contenedor de los productos.
+       Las tarjetas (cards) no están escritas aquí; se crean automáticamente con JavaScript
+       y se colocan dentro de este div. -->
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="product-grid">
-    <!-- Cards generadas por JS (el web.js) -->
+    <!-- Aquí el archivo web.js inserta las tarjetas de cada producto -->  
   </div>
 </section>
 
-<!-- Ofertas -->
+<!--------------------------------------------------->
+
+<!-- Sección de ofertas especiales -->
 <section id="ofertas" class="mb-5">
+
+  <!-- Título de la sección -->
   <h3 class="mb-3">Ofertas</h3>
+
   <div class="row g-3">
+
+    <!-- Primera oferta -->
     <div class="col-md-6">
       <div class="p-3 rounded bg-white form-card">
+
+        <!-- Nombre del pack -->
         <h5>Pack de temporada</h5>
+
+        <!-- Descripción corta de lo que incluye -->
         <p class="text-muted">Caja sorpresa con 6-8 productos locales a precio especial.</p>
+
+        <!-- Precio y botón para agregar al carrito -->
         <div class="d-flex justify-content-between align-items-center">
           <div>
             <div class="price">₡9,900</div>
             <small class="text-muted">Ahorra ₡2,000</small>
           </div>
+
+          <!-- Cuando se hace clic, se agrega este producto al carrito -->
           <button class="btn btn-success" onclick="addToCart('Pack temporada',9900)">Agregar al carrito</button>
         </div>
+
       </div>
     </div>
+
+    <!-- Segunda oferta -->
     <div class="col-md-6">
       <div class="p-3 rounded bg-white form-card">
+
         <h5>Granos a granel</h5>
         <p class="text-muted">Quinua, lentejas y más — empaques sostenibles.</p>
+
         <div class="d-flex justify-content-between align-items-center">
           <div>
             <div class="price">₡3,200 / 500g</div>
             <small class="text-muted">Compra 3 y paga 2</small>
           </div>
+
+          <!-- Agrega este producto al carrito -->
           <button class="btn btn-success" onclick="addToCart('Granos 500g',3200)">Agregar al carrito</button>
         </div>
+
       </div>
     </div>
+
   </div>
+
 </section>
 
-<!-- Contacto -->
+<!--------------------------------------------------->
+
+<!-- Sección de contacto -->
 <section id="contacto" class="mb-5">
+
   <h3 class="mb-3">Contáctanos</h3>
+
   <div class="row">
+
+    <!-- Formulario para que la persona envíe un mensaje -->
     <div class="col-md-6">
       <form id="contact-form" class="form-card bg-white">
+
+        <!-- Nombre del usuario -->
         <div class="mb-3">
           <label class="form-label">Nombre</label>
           <input type="text" id="c-name" class="form-control" required>
         </div>
+
+        <!-- Correo electrónico -->
         <div class="mb-3">
           <label class="form-label">Correo electrónico</label>
           <input type="email" id="c-email" class="form-control" required>
         </div>
+
+        <!-- Mensaje -->
         <div class="mb-3">
           <label class="form-label">Mensaje</label>
           <textarea id="c-msg" rows="4" class="form-control" required></textarea>
         </div>
+
+        <!-- Aviso y botón de enviar -->
         <div class="d-flex justify-content-between align-items-center">
           <small class="text-muted">Responderemos en menos de 48 horas.</small>
           <button class="btn btn-success" type="submit">Enviar</button>
         </div>
+
+        <!-- Mensaje de confirmación (se muestra con JS) -->
         <div id="contact-feedback" class="mt-2" style="display:none"></div>
+
       </form>
     </div>
+
+<!--------------------------------------------------->
+
+    <!-- Información adicional -->
     <div class="col-md-6">
       <div class="p-3 rounded bg-white form-card">
         <h5>Información útil</h5>
         <p class="text-muted">Horario: Lun-Vie 8:00-17:00. Tel: +51 991 655 849</p>
+
         <h6>Dirección</h6>
-        <p class="text-muted">AQUÍ PONES LA UBICACIÓN</p> <!--Aquí falta poner la ubicación-->
+        <!-- Aquí tu amiga puede poner su dirección o ubicación -->
+        <p class="text-muted">AQUÍ PONES LA UBICACIÓN</p>
+
         <div class="mt-3">
           <small class="chip">Envíos locales • Pago contra entrega</small>
         </div>
       </div>
     </div>
+
   </div>
+
 </section>
+
 </main>
 
+<!--------------------------------------------------->
+
+<!-- Pie de página -->
 <footer class="footer mt-4">
-    <div class="container d-flex justify-content-between align-items-center">
-      <div>
-        <strong>EcoMarket</strong>
-        <div style="font-size:.9rem">Cultivando comunidad</div>
-      </div>
-      <div style="font-size:.9rem">© "EcoMarket" — Redesigned • 2025</div>
-    </div>
-  </footer>  
+  <div class="container d-flex justify-content-between align-items-center">
 
-  <!-- Product Template Modal -->  
-   
-  <div class="modal fade" id="productModal" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Producto</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body row">
-          <div class="col-md-6" id="modal-img"></div>
-          <div class="col-md-6">
-            <h4 id="modal-title"></h4>
-            <p id="modal-desc" class="text-muted"></p>
-            <div class="mb-2">Precio: <span id="modal-price" class="price"></span></div>
-            <div class="mb-3">
-              <label>Cantidad</label>
-              <input id="modal-qty" type="number" min="1" value="1" class="form-control" style="max-width:120px">
-            </div>
-            <div class="d-flex gap-2">
-              <button class="btn btn-success" id="modal-add">Agregar al carrito</button>
-              <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
+    <div>
+      <strong>EcoMarket</strong>
+      <div style="font-size:.9rem">Cultivando comunidad</div>
+    </div>
+
+    <div style="font-size:.9rem">© "EcoMarket" — Redesigned • 2025</div>
+
+  </div>
+</footer>
+
+<!--------------------------------------------------->
+
+<!-- Modal para ver información detallada de un producto -->
+<div class="modal fade" id="productModal" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+
+      <!-- Encabezado del modal -->
+      <div class="modal-header">
+        <h5 class="modal-title">Producto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Cuerpo del modal (imagen + detalles) -->
+      <div class="modal-body row">
+
+        <!-- Imagen del producto -->
+        <div class="col-md-6" id="modal-img"></div>
+
+        <!-- Información del producto -->
+        <div class="col-md-6">
+          <h4 id="modal-title"></h4>
+          <p id="modal-desc" class="text-muted"></p>
+
+          <!-- Precio -->
+          <div class="mb-2">Precio: <span id="modal-price" class="price"></span></div>
+
+          <!-- Cantidad a comprar -->
+          <div class="mb-3">
+            <label>Cantidad</label>
+            <input id="modal-qty" type="number" min="1" value="1" class="form-control" style="max-width:120px">
           </div>
-        </div>
-      </div>
-    </div>
-  </div>  
-  
-  <!-- Carrito offcanvas -->  
-   
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="cartCanvas">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title">Tu carrito</h5>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
-    </div>
-    <div class="offcanvas-body" id="cart-body">
-      <div id="cart-items"></div>
-      <div class="mt-3 d-flex justify-content-between align-items-center">
-        <strong>Total:</strong>
-        <div id="cart-total">₡0</div>
-      </div>
-      <div class="mt-3">
-        <button class="btn btn-success w-100" id="checkout-btn">Finalizar compra</button>
-      </div>
-    </div>
-  </div> 
 
+          <!-- Botones -->
+          <div class="d-flex gap-2">
+            <button class="btn btn-success" id="modal-add">Agregar al carrito</button>
+            <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!--------------------------------------------------->
+
+<!-- Carrito lateral (offcanvas) -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="cartCanvas">
+
+  <!-- Encabezado -->
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">Tu carrito</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+  </div>
+
+  <!-- Cuerpo del carrito -->
+  <div class="offcanvas-body" id="cart-body">
+
+    <!-- Aquí se muestran los productos agregados -->
+    <div id="cart-items"></div>
+
+    <!-- Total a pagar -->
+    <div class="mt-3 d-flex justify-content-between align-items-center">
+      <strong>Total:</strong>
+      <div id="cart-total">₡0</div>
+    </div>
+
+    <!-- Botón para finalizar compra -->
+    <div class="mt-3">
+      <button class="btn btn-success w-100" id="checkout-btn">Finalizar compra</button>
+    </div>
+
+  </div>
+
+</div>
+
+<!--------------------------------------------------->
+
+<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="JS/web.js"></script>
+
 </body>
 </html>
